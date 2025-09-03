@@ -2,7 +2,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, create a `.env` file in the root directory with the following variables:
+
+```env
+GOOGLE_GENERATIVE_AI_API_KEY=your_google_ai_api_key_here
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
