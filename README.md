@@ -27,7 +27,7 @@ Un juego de aventura conversacional de supervivencia zombie con narrativa genera
 - **Aventura Conversacional**: Interactúa usando lenguaje natural
 - **Supervivencia Zombie**: Toma decisiones críticas para sobrevivir
 - **Interfaz Moderna**: UI responsive y elegante con TailwindCSS
-- **Tiempo Real**: Experiencia de juego fluida y reactiva
+- **AI-Native Components**: Construido con [AI Elements](https://ai-sdk.dev/elements/overview), la librería de componentes especializada en aplicaciones de IA
 
 ## 🚀 Demo
 
@@ -39,40 +39,45 @@ Un juego de aventura conversacional de supervivencia zombie con narrativa genera
 - **Frontend**: [React 19](https://reactjs.org/) con TypeScript
 - **Estilos**: [TailwindCSS 4](https://tailwindcss.com/)
 - **IA**: [Google Gemini](https://ai.google.dev/) para narrativa e imágenes
-- **UI Components**: [Radix UI](https://www.radix-ui.com/)
-- **Iconos**: [Lucide React](https://lucide.dev/)
+- **UI Components**: [AI Elements](https://ai-sdk.dev/elements/overview) de Vercel
 - **Linting**: [Biome](https://biomejs.dev/)
 
 ## 📦 Instalación
 
 1. **Clona el repositorio**
-   ```bash
-   git clone https://github.com/midudev/zombie-game.git
-   cd zombie-game
-   ```
+   
+```bash
+git clone https://github.com/midudev/zombie-game.git
+cd zombie-game
+```
 
 2. **Instala las dependencias**
-   ```bash
-   pnpm install
-   ```
+   
+```bash
+pnpm install
+```
 
 3. **Configura las variables de entorno**
-   ```bash
-   cp .env.example .env.local
-   ```
    
-   Añade tu clave de API de Google AI:
-   ```env
-   GOOGLE_GENERATIVE_AI_API_KEY=tu_clave_aqui
-   ```
+```bash
+cp .env.example .env.local
+```
+   
+Añade tu clave de API de Google AI:
+   
+```env
+GOOGLE_GENERATIVE_AI_API_KEY=tu_clave_aqui
+```
 
 4. **Inicia el servidor de desarrollo**
-   ```bash
-   pnpm dev
-   ```
+
+```bash
+pnpm dev
+```
 
 5. **Abre tu navegador**
-   Visita [http://localhost:3000](http://localhost:3000) y comienza tu aventura de supervivencia.
+
+Visita [http://localhost:3000](http://localhost:3000) y comienza tu aventura de supervivencia.
 
 ## 🎯 Cómo Jugar
 
@@ -82,6 +87,7 @@ Un juego de aventura conversacional de supervivencia zombie con narrativa genera
 4. **Explora**: El mundo se genera dinámicamente basado en tus acciones
 
 ### Ejemplos de Acciones
+
 - "Busco un arma en la habitación"
 - "Me dirijo hacia la salida de emergencia"
 - "Examino los sonidos que vienen del pasillo"
@@ -124,7 +130,7 @@ src/
 - **Server Components**: Aprovecha las últimas características de React 19
 - **Streaming**: Respuestas de IA en tiempo real
 - **Optimización**: Turbopack para builds ultrarrápidos
-- **Accesibilidad**: Componentes accesibles con Radix UI
+- **AI-First Design**: Componentes nativos para IA con AI Elements de Vercel
 - **Responsive**: Diseño adaptable a todos los dispositivos
 - **Type Safety**: TypeScript estricto para mayor confiabilidad
 
