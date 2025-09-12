@@ -10,10 +10,6 @@ export function useZombieGame() {
 
   useEffect(() => {
     startGame();
-  }, []);
-
-  useEffect(() => {
-    startGame();
   }, [gameName]);
 
   const startGame = async () => {

@@ -59,6 +59,7 @@ export function GameInput({
           <PromptInputModelSelect
             onValueChange={handleSelectGameChange}
             defaultValue={gameName}
+            disabled={isLoading}
           >
             <PromptInputModelSelectTrigger>
               <PromptInputModelSelectValue defaultValue={gameName} />
