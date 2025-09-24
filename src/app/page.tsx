@@ -4,13 +4,24 @@ import { Conversation, ConversationContent, ConversationScrollButton } from "@/c
 import { GameInput } from "./componentes/game-input";
 import { GameLoader } from "./componentes/game-loader";
 import { GameMessage } from "./componentes/game-message";
+import { GameSuggestions } from "./componentes/game-suggestions";
 import { useZombieGame } from "./hooks/use-zombie-game";
 import { useColorExtractor } from "@/app/hooks/color-extractor";
 import { useState, useEffect, useRef } from "react";
 import { type GameMessage as GameMessageType } from "@/lib/types";
 
 export default function Home() {
-  const { messages, input, isLoading, startGame, handleSubmit, handleInputChange } = useZombieGame();
+  const {
+    messages,
+    input,
+    isLoading,
+    suggestions,
+    suggestionsLoading,
+    startGame,
+    handleSubmit,
+    handleInputChange,
+    handleSuggestionClick
+  } = useZombieGame();
   const [image, setImage] = useState<string | undefined>('');
   const lastMessageRef = useRef<GameMessageType | null>(null);
   useColorExtractor(image);
@@ -18,11 +29,11 @@ export default function Home() {
   useEffect(() => {
     if (messages.length > 0) {
       const latestMessage = messages[messages.length - 1];
-      
-      if (latestMessage !== lastMessageRef.current && 
-          latestMessage.image?.base64Data && 
-          !latestMessage.imageLoading) {
-        
+
+      if (latestMessage !== lastMessageRef.current &&
+        latestMessage.image?.base64Data &&
+        !latestMessage.imageLoading) {
+
         setImage(latestMessage.image.base64Data);
         lastMessageRef.current = latestMessage;
       }
@@ -41,7 +52,7 @@ export default function Home() {
 
   return (
     <div className="font-sans h-screen mx-auto overflow-hidden bg-gradient-to-t from-[var(--color-gradient-principal)] to-[var(--color-gradient-secondary)]">
-      
+
       <div className="flex flex-col h-full">
         <Conversation>
           <ConversationContent className="max-w-xl mx-auto">
@@ -55,7 +66,12 @@ export default function Home() {
           <ConversationScrollButton />
         </Conversation>
 
-        <div className="max-w-2xl w-full mx-auto pb-4">
+        <div className="max-w-2xl w-full mx-auto pb-4 mt-4 space-y-4">
+          <GameSuggestions
+            suggestions={suggestions}
+            onSuggestionClick={handleSuggestionClick}
+            isLoading={suggestionsLoading}
+          />
           <GameInput
             input={input}
             onInputChange={handleInputChange}

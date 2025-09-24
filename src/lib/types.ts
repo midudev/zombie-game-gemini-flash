@@ -31,3 +31,12 @@ export interface GenerateStoryResponse {
   narrative: string;
   imagePrompt: string;
 }
+
+export interface GenerateSuggestionsRequest {
+  conversationHistory: ConversationMessage[];
+  currentSituation: string;
+}
+
+export interface GenerateSuggestionsResponse {
+  suggestions: string[];
+}
