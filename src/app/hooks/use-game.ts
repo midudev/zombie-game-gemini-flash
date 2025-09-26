@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import type { GameMessage, GameType, GenerateStoryResponse } from "@/lib/types";
 import { DEFAULT_GAME } from "@/lib/games";
 
-export function useZombieGame() {
+export function useGame() {
   const [messages, setMessages] = useState<GameMessage[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
