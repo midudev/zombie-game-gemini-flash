@@ -1,6 +1,8 @@
+import { GAMES } from "./games";
+
 export interface GameMessage {
   id: string;
-  role: 'user' | 'assistant';
+  role: "user" | "assistant";
   content: string;
   image?: GeneratedImage;
   imageLoading?: boolean;
@@ -13,21 +15,25 @@ export interface GeneratedImage {
 }
 
 export interface ConversationMessage {
-  role: 'user' | 'assistant';
-  content: string
+  role: "user" | "assistant";
+  content: string;
 }
 
 export interface GenerateStoryRequest {
   userMessage: string;
   conversationHistory: ConversationMessage[];
   isStart: boolean;
+  gameName: GameType;
 }
 
 export interface GenerateImageRequest {
   imagePrompt: string;
+  gameName: GameType;
 }
 
 export interface GenerateStoryResponse {
   narrative: string;
   imagePrompt: string;
 }
+
+export type GameType = keyof typeof GAMES;
